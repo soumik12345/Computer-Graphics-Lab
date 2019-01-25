@@ -7,7 +7,9 @@ void left_to_right(int r) {
 	for(x = 0; x < x_max; x++) {
 		y = y_max / 2;
 		cleardevice();
+		setfillstyle(HATCH_FILL, RED); 
 		circle(x, y, r);
+		floodfill(x, y, WHITE);
 		delay(10);
 	}
 }
@@ -17,7 +19,9 @@ void top_to_bottom(int r) {
 	for(y = 0; y < y_max; y++) {
 		x = x_max / 2;
 		cleardevice();
+		setfillstyle(HATCH_FILL, RED); 
 		circle(x, y, r);
+		floodfill(x, y, WHITE);
 		delay(10);
 	}
 }
@@ -26,7 +30,9 @@ void topleft_to_bottomright(int r) {
 	int x_max = getmaxx(), y = getmaxy(), x = 0; y = 0;
 	for(x = 0; x < x_max; x++) {
 		cleardevice();
+		setfillstyle(HATCH_FILL, RED); 
 		circle(x, y++, r);
+		floodfill(x, y, WHITE);
 		delay(10);
 	}
 }
@@ -36,7 +42,9 @@ void bottomleft_to_topright(r) {
 	int x = 0, y = y_max;
 	for(x = 0; x < x_max; x++) {
 		cleardevice();
-		circle(x, y--, r);
+		setfillstyle(HATCH_FILL, RED); 
+		circle(x, y, r);
+		floodfill(x, y--, WHITE);
 		delay(10);
 	}
 }
